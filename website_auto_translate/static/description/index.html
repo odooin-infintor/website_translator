@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local preview — approximates apps.odoo.com rendering</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>body{font-family:Arial,Helvetica,sans-serif;margin:0;padding:0;}</style>
+</head>
+<body>
+<!-- Website Auto Translate for Odoo — description page
+     Written to survive apps.odoo.com's HTML sanitizer:
+     - no <style>/<head>/<body> (Odoo injects this as a fragment)
+     - hex colors only (no rgba, no gradients)
+     - no inline box-shadow (Bootstrap shadow-sm class instead)
+     - no inline align-items / justify-content / flex-wrap / gap / flex-shrink
+       (Bootstrap classes instead: d-flex, align-items-center, justify-content-center, gap-*, flex-shrink-0)
+     - no Font Awesome / external icon font dependency — icons are emoji entities or local images
+     - external links left as <a>; mailto: links stay clickable, others may render as plain text -->
+
+<!-- ============ Top bar ============ -->
+<section>
+  <div class="d-flex align-items-center justify-content-between flex-wrap gap-3" style="max-width:1180px;margin:0 auto;padding:16px 24px;background-color:#F6F5FB;border-bottom:1px solid #E1DEF3;">
+    <a href="#top" class="d-flex align-items-center gap-2" style="font-weight:700;font-size:19px;text-decoration:none;color:#1C1B33;">
+      <span class="d-inline-flex align-items-center justify-content-center" style="width:30px;height:30px;border-radius:50%;border:1.5px solid #232152;font-size:15px;">&#127760;</span>
+      Auto Translate
+    </a>
+    <ul class="d-flex flex-wrap gap-4 list-unstyled" style="margin:0;padding:0;">
+      <li><a href="#features" style="text-decoration:none;font-size:14.5px;font-weight:600;color:#605E7E;">Features</a></li>
+      <li><a href="#walkthrough" style="text-decoration:none;font-size:14.5px;font-weight:600;color:#605E7E;">How it Works</a></li>
+      <li><a href="#services" style="text-decoration:none;font-size:14.5px;font-weight:600;color:#605E7E;">Services</a></li>
+      <li><a href="#support" style="text-decoration:none;font-size:14.5px;font-weight:600;color:#605E7E;">Support</a></li>
+    </ul>
+    <a href="mailto:odoo@infintor.com" style="font-size:13px;font-weight:700;letter-spacing:.03em;text-decoration:none;background-color:#232152;color:#ffffff;padding:10px 20px;border-radius:999px;white-space:nowrap;display:inline-block;">Get in touch</a>
+  </div>
+</section>
+
+<div id="top">
+
+  <!-- ============ Hero ============ -->
+  <section style="background-color:#F6F5FB;">
+    <div class="container" style="max-width:1180px;padding:56px 24px 40px;">
+      <div class="row align-items-center g-5">
+
+        <div class="col-md-7">
+          <p style="font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#E14B33;margin-bottom:14px;">Odoo Website Module</p>
+          <h1 style="font-size:38px;font-weight:700;line-height:1.15;margin-bottom:18px;color:#1C1B33;">
+            <span style="color:#1FA98F;">Website Auto Translate</span> for Odoo
+          </h1>
+          <p style="color:#605E7E;font-size:16px;line-height:27px;margin-bottom:22px;">
+            Show every visitor your website in their own language, automatically. Website Auto Translate
+            scans each rendered page, translates it in real time through the Google Translate API, and
+            caches every result so repeat visits load instantly &mdash; without touching a single template or view.
+          </p>
+          <div class="d-flex flex-wrap gap-2">
+            <span style="font-size:12.5px;font-weight:700;color:#232152;border:1px solid #232152;border-radius:999px;padding:7px 16px;display:inline-block;">Community</span>
+            <span style="font-size:12.5px;font-weight:700;color:#232152;border:1px solid #232152;border-radius:999px;padding:7px 16px;display:inline-block;">Enterprise</span>
+            <span style="font-size:12.5px;font-weight:700;color:#232152;border:1px solid #232152;border-radius:999px;padding:7px 16px;display:inline-block;">Odoo.sh</span>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="shadow-sm" style="background-color:#232152;border-radius:16px;padding:30px;">
+            <p style="font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#C9C7E6;margin-bottom:20px;">Translation flow</p>
+
+            <div class="d-flex align-items-center gap-3" style="padding:12px 0;border-bottom:1px dashed #3B3880;">
+              <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:46px;height:46px;border-radius:50%;border:2px solid #C9C7E6;font-size:9.5px;font-weight:700;color:#C9C7E6;text-align:center;">SCAN</div>
+              <div>
+                <strong style="display:block;color:#ffffff;font-size:15px;">Scan Page</strong>
+                <span style="font-size:13px;color:#C9C7E6;">Text nodes are collected on load</span>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-3" style="padding:12px 0;border-bottom:1px dashed #3B3880;">
+              <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:46px;height:46px;border-radius:50%;border:2px solid #FF6F59;font-size:9px;font-weight:700;color:#FF6F59;text-align:center;">CACHE</div>
+              <div>
+                <strong style="display:block;color:#ffffff;font-size:15px;">Check Cache</strong>
+                <span style="font-size:13px;color:#C9C7E6;">Known strings return instantly</span>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-3" style="padding:12px 0;">
+              <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:46px;height:46px;border-radius:50%;border:2px solid #7FE9D3;font-size:9.5px;font-weight:700;color:#7FE9D3;text-align:center;">SYNC</div>
+              <div>
+                <strong style="display:block;color:#ffffff;font-size:15px;">Translate &amp; Store</strong>
+                <span style="font-size:13px;color:#C9C7E6;">New strings batched to Google, then cached</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Features ============ -->
+  <section id="features" style="background-color:#ffffff;">
+    <div class="container" style="max-width:1180px;padding:64px 24px;">
+      <div class="text-center" style="max-width:760px;margin:0 auto 48px;">
+        <p style="font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#E14B33;margin-bottom:12px;">Why it works</p>
+        <h2 style="font-size:30px;font-weight:700;margin:0;color:#1C1B33;"><span style="color:#1FA98F;">Key Features</span> of Website Auto Translate</h2>
+      </div>
+
+      <div class="row g-3">
+
+        <div class="col-md-6">
+          <div class="d-flex gap-3 h-100" style="background-color:#EAFBF7;border:1px solid #CDEEE7;border-radius:14px;padding:28px;">
+            <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:56px;height:56px;border-radius:14px;background-color:#ffffff;font-size:24px;">&#128269;</div>
+            <div>
+              <h5 style="color:#3B3880;font-size:17px;font-weight:700;margin:0 0 8px;">Automatic Content Scanning</h5>
+              <p style="color:#605E7E;font-size:14.5px;line-height:23px;margin:0;">The moment a page loads in a non-English language, every visible text node is collected client-side &mdash; no template edits, no manual string marking, nothing to maintain per page.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="d-flex gap-3 h-100" style="background-color:#EAFBF7;border:1px solid #CDEEE7;border-radius:14px;padding:28px;">
+            <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:56px;height:56px;border-radius:14px;background-color:#ffffff;font-size:24px;">&#127760;</div>
+            <div>
+              <h5 style="color:#3B3880;font-size:17px;font-weight:700;margin:0 0 8px;">Google Translate API Integration</h5>
+              <p style="color:#605E7E;font-size:14.5px;line-height:23px;margin:0;">Translations are generated through the Google Translate API using your own key, configured from a single field in Settings &mdash; no separate translation service to manage.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="d-flex gap-3 h-100" style="background-color:#EAFBF7;border:1px solid #CDEEE7;border-radius:14px;padding:28px;">
+            <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:56px;height:56px;border-radius:14px;background-color:#ffffff;font-size:24px;">&#128190;</div>
+            <div>
+              <h5 style="color:#3B3880;font-size:17px;font-weight:700;margin:0 0 8px;">Smart Translation Caching</h5>
+              <p style="color:#605E7E;font-size:14.5px;line-height:23px;margin:0;">Every source string and language pair is stored once in a dedicated cache model. Repeat visits, and repeat visitors, are served from cache instead of calling the API again.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="d-flex gap-3 h-100" style="background-color:#EAFBF7;border:1px solid #CDEEE7;border-radius:14px;padding:28px;">
+            <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:56px;height:56px;border-radius:14px;background-color:#ffffff;font-size:24px;">&#128230;</div>
+            <div>
+              <h5 style="color:#3B3880;font-size:17px;font-weight:700;margin:0 0 8px;">Batched &amp; Deduplicated Requests</h5>
+              <p style="color:#605E7E;font-size:14.5px;line-height:23px;margin:0;">Duplicate strings on the same page are translated once, and requests are chunked to respect Google's batch limits &mdash; keeping API calls, and cost, to a minimum.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="d-flex gap-3 h-100" style="background-color:#EAFBF7;border:1px solid #CDEEE7;border-radius:14px;padding:28px;">
+            <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:56px;height:56px;border-radius:14px;background-color:#ffffff;font-size:24px;">&#128737;</div>
+            <div>
+              <h5 style="color:#3B3880;font-size:17px;font-weight:700;margin:0 0 8px;">Safe Fallback on Failure</h5>
+              <p style="color:#605E7E;font-size:14.5px;line-height:23px;margin:0;">If the API key is missing, invalid, or a request fails, the original text is shown and left uncached &mdash; visitors never see a broken or blank page.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="d-flex gap-3 h-100" style="background-color:#EAFBF7;border:1px solid #CDEEE7;border-radius:14px;padding:28px;">
+            <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:56px;height:56px;border-radius:14px;background-color:#ffffff;font-size:24px;">&#9881;</div>
+            <div>
+              <h5 style="color:#3B3880;font-size:17px;font-weight:700;margin:0 0 8px;">One-Click Enable in Settings</h5>
+              <p style="color:#605E7E;font-size:14.5px;line-height:23px;margin:0;">Turn auto translation on or off, and manage your API key, from a single toggle in General Settings &mdash; no developer mode, no code changes required.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="d-flex gap-3 h-100" style="background-color:#EAFBF7;border:1px solid #CDEEE7;border-radius:14px;padding:28px;">
+            <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:56px;height:56px;border-radius:14px;background-color:#ffffff;font-size:24px;">&#127757;</div>
+            <div>
+              <h5 style="color:#3B3880;font-size:17px;font-weight:700;margin:0 0 8px;">Works With Any Website Language</h5>
+              <p style="color:#605E7E;font-size:14.5px;line-height:23px;margin:0;">The module reads whatever language is active on the page and translates into it automatically, so every language you install on your website is covered from day one.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Walkthrough ============ -->
+  <section id="walkthrough" style="background-color:#F6F5FB;">
+    <div class="container" style="max-width:1180px;padding:64px 24px;">
+      <div class="text-center" style="max-width:760px;margin:0 auto 48px;">
+        <p style="font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#E14B33;margin-bottom:12px;">How it works</p>
+        <h2 style="font-size:30px;font-weight:700;margin:0;color:#1C1B33;"><span style="color:#1FA98F;">Setup &amp; Behaviour</span> Walkthrough</h2>
+        <p style="color:#605E7E;font-size:16px;line-height:26px;margin-top:14px;">
+          From adding your API key to seeing translations served instantly from cache on a second visit &mdash;
+          here's the full picture.
+        </p>
+      </div>
+
+      <div style="max-width:880px;margin:0 auto;">
+
+        <div class="d-flex gap-4" style="padding:36px 0;border-top:1px solid #E1DEF3;">
+          <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:56px;height:56px;border-radius:50%;border:2px dashed #FF6F59;font-weight:700;font-size:17px;color:#E14B33;background-color:#ffffff;">1</div>
+          <div>
+            <h3 style="font-size:22px;font-weight:700;line-height:1.3;margin:0 0 10px;"><span style="color:#1FA98F;">Configure</span> the Module</h3>
+            <p style="color:#605E7E;font-size:16px;line-height:1.7;margin:0 0 18px;">From Settings &rarr; Website, enable Auto Translation and paste in your Google Translate API key. That's the entire setup.</p>
+            <div class="shadow-sm" style="border-radius:14px;overflow:hidden;border:1px solid #E1DEF3;background-color:#ffffff;">
+              <div class="d-flex gap-2" style="padding:10px 14px;background-color:#F1EFFA;border-bottom:1px solid #E1DEF3;"><span style="width:9px;height:9px;border-radius:50%;background-color:#D6D2EC;display:inline-block;"></span><span style="width:9px;height:9px;border-radius:50%;background-color:#D6D2EC;display:inline-block;"></span><span style="width:9px;height:9px;border-radius:50%;background-color:#D6D2EC;display:inline-block;"></span></div>
+              <img src="screenshots/01-settings-enable-api-key.png" alt="Enabling auto translation and adding a Google Translate API key in Settings" style="width:100%;display:block;">
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex gap-4" style="padding:36px 0;border-top:1px solid #E1DEF3;">
+          <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:56px;height:56px;border-radius:50%;border:2px dashed #FF6F59;font-weight:700;font-size:17px;color:#E14B33;background-color:#ffffff;">2</div>
+          <div>
+            <h3 style="font-size:22px;font-weight:700;line-height:1.3;margin:0 0 10px;"><span style="color:#1FA98F;">Switch</span> the Website Language</h3>
+            <p style="color:#605E7E;font-size:16px;line-height:1.7;margin:0 0 18px;">A visitor picks a different language from the website's language selector, and the page reloads with that language's HTML tag set.</p>
+            <div class="shadow-sm" style="border-radius:14px;overflow:hidden;border:1px solid #E1DEF3;background-color:#ffffff;">
+              <div class="d-flex gap-2" style="padding:10px 14px;background-color:#F1EFFA;border-bottom:1px solid #E1DEF3;"><span style="width:9px;height:9px;border-radius:50%;background-color:#D6D2EC;display:inline-block;"></span><span style="width:9px;height:9px;border-radius:50%;background-color:#D6D2EC;display:inline-block;"></span><span style="width:9px;height:9px;border-radius:50%;background-color:#D6D2EC;display:inline-block;"></span></div>
+              <img src="screenshots/02-website-language-selector.png" alt="Visitor switching the active language on the website" style="width:100%;display:block;">
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex gap-4" style="padding:36px 0;border-top:1px solid #E1DEF3;">
+          <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:56px;height:56px;border-radius:50%;border:2px dashed #FF6F59;font-weight:700;font-size:17px;color:#E14B33;background-color:#ffffff;">3</div>
+          <div>
+            <h3 style="font-size:22px;font-weight:700;line-height:1.3;margin:0 0 10px;"><span style="color:#1FA98F;">Live</span> Client-Side Translation</h3>
+            <p style="color:#605E7E;font-size:16px;line-height:1.7;margin:0 0 18px;">The page's text nodes are sent to the server in one batch call and swapped in place as soon as translations come back &mdash; the underlying page templates are never touched.</p>
+            <div class="shadow-sm" style="border-radius:14px;overflow:hidden;border:1px solid #E1DEF3;background-color:#ffffff;">
+              <div class="d-flex gap-2" style="padding:10px 14px;background-color:#F1EFFA;border-bottom:1px solid #E1DEF3;"><span style="width:9px;height:9px;border-radius:50%;background-color:#D6D2EC;display:inline-block;"></span><span style="width:9px;height:9px;border-radius:50%;background-color:#D6D2EC;display:inline-block;"></span><span style="width:9px;height:9px;border-radius:50%;background-color:#D6D2EC;display:inline-block;"></span></div>
+              <img src="screenshots/03-frontend-live-translation.png" alt="Website page rendering with content automatically translated" style="width:100%;display:block;">
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex gap-4" style="padding:36px 0;border-top:1px solid #E1DEF3;">
+          <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:56px;height:56px;border-radius:50%;border:2px dashed #FF6F59;font-weight:700;font-size:17px;color:#E14B33;background-color:#ffffff;">4</div>
+          <div>
+            <h3 style="font-size:22px;font-weight:700;line-height:1.3;margin:0 0 10px;"><span style="color:#1FA98F;">Cache</span> Fills Automatically</h3>
+            <p style="color:#605E7E;font-size:16px;line-height:1.7;margin:0 0 18px;">Every new translation is saved to the Auto Translation Cache. The next visitor, or the same visitor's next page, is served from cache with no additional API call.</p>
+            <div class="shadow-sm" style="border-radius:14px;overflow:hidden;border:1px solid #E1DEF3;background-color:#ffffff;">
+              <div class="d-flex gap-2" style="padding:10px 14px;background-color:#F1EFFA;border-bottom:1px solid #E1DEF3;"><span style="width:9px;height:9px;border-radius:50%;background-color:#D6D2EC;display:inline-block;"></span><span style="width:9px;height:9px;border-radius:50%;background-color:#D6D2EC;display:inline-block;"></span><span style="width:9px;height:9px;border-radius:50%;background-color:#D6D2EC;display:inline-block;"></span></div>
+              <img src="screenshots/04-cache-record-list.png" alt="Auto Translation Cache list showing source text, language and stored translation" style="width:100%;display:block;">
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex gap-4" style="padding:36px 0;border-top:1px solid #E1DEF3;">
+          <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:56px;height:56px;border-radius:50%;border:2px dashed #FF6F59;font-weight:700;font-size:17px;color:#E14B33;background-color:#ffffff;">5</div>
+          <div>
+            <h3 style="font-size:22px;font-weight:700;line-height:1.3;margin:0 0 10px;"><span style="color:#1FA98F;">Graceful</span> Fallback</h3>
+            <p style="color:#605E7E;font-size:16px;line-height:1.7;margin:0 0 18px;">If translation isn't enabled, the key is missing, or the API call fails, the page simply shows the original text &mdash; nothing breaks and nothing is cached as a false translation.</p>
+            <div class="shadow-sm" style="border-radius:14px;overflow:hidden;border:1px solid #E1DEF3;background-color:#ffffff;">
+              <div class="d-flex gap-2" style="padding:10px 14px;background-color:#F1EFFA;border-bottom:1px solid #E1DEF3;"><span style="width:9px;height:9px;border-radius:50%;background-color:#D6D2EC;display:inline-block;"></span><span style="width:9px;height:9px;border-radius:50%;background-color:#D6D2EC;display:inline-block;"></span><span style="width:9px;height:9px;border-radius:50%;background-color:#D6D2EC;display:inline-block;"></span></div>
+              <img src="screenshots/05-fallback-original-text.png" alt="Website falling back to original text when translation is unavailable" style="width:100%;display:block;">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Services ============ -->
+  <section id="services" style="background-color:#ffffff;">
+    <div class="container" style="max-width:1180px;padding:64px 24px;">
+      <div class="text-center" style="max-width:760px;margin:0 auto 48px;">
+        <p style="font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#E14B33;margin-bottom:12px;">Beyond the module</p>
+        <h2 style="font-size:30px;font-weight:700;margin:0;color:#1C1B33;"><span style="color:#1FA98F;">Our</span> Services</h2>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-3 col-sm-6">
+          <div style="background-color:#ffffff;border:1px solid #E1DEF3;border-radius:14px;padding:26px 22px;height:100%;">
+            <div class="d-flex align-items-center justify-content-center" style="width:44px;height:44px;border-radius:10px;background-color:#EAFBF7;margin-bottom:16px;"><img alt="" src="./images/custom.png" style="width:24px;height:24px;display:block;"></div>
+            <h4 style="color:#1C1B33;font-size:16px;font-weight:700;margin:0 0 8px;">Odoo Implementation</h4>
+            <p style="color:#605E7E;font-size:14px;line-height:22px;margin:0;">End-to-end Odoo implementation to meet your business needs.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div style="background-color:#ffffff;border:1px solid #E1DEF3;border-radius:14px;padding:26px 22px;height:100%;">
+            <div class="d-flex align-items-center justify-content-center" style="width:44px;height:44px;border-radius:10px;background-color:#EAFBF7;margin-bottom:16px;"><img alt="" src="./images/implementation.png" style="width:24px;height:24px;display:block;"></div>
+            <h4 style="color:#1C1B33;font-size:16px;font-weight:700;margin:0 0 8px;">Odoo Customization</h4>
+            <p style="color:#605E7E;font-size:14px;line-height:22px;margin:0;">Custom solutions tailored to your unique requirements.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div style="background-color:#ffffff;border:1px solid #E1DEF3;border-radius:14px;padding:26px 22px;height:100%;">
+            <div class="d-flex align-items-center justify-content-center" style="width:44px;height:44px;border-radius:10px;background-color:#EAFBF7;margin-bottom:16px;"><img alt="" src="./images/customer-service.png" style="width:24px;height:24px;display:block;"></div>
+            <h4 style="color:#1C1B33;font-size:16px;font-weight:700;margin:0 0 8px;">Odoo Support &amp; Training</h4>
+            <p style="color:#605E7E;font-size:14px;line-height:22px;margin:0;">Comprehensive support and training to enhance your Odoo usage.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div style="background-color:#ffffff;border:1px solid #E1DEF3;border-radius:14px;padding:26px 22px;height:100%;">
+            <div class="d-flex align-items-center justify-content-center" style="width:44px;height:44px;border-radius:10px;background-color:#EAFBF7;margin-bottom:16px;"><img alt="" src="./images/hired.png" style="width:24px;height:24px;display:block;"></div>
+            <h4 style="color:#1C1B33;font-size:16px;font-weight:700;margin:0 0 8px;">Hire an Odoo Developer</h4>
+            <p style="color:#605E7E;font-size:14px;line-height:22px;margin:0;">Get access to skilled Odoo developers for your project needs.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div style="background-color:#ffffff;border:1px solid #E1DEF3;border-radius:14px;padding:26px 22px;height:100%;">
+            <div class="d-flex align-items-center justify-content-center" style="width:44px;height:44px;border-radius:10px;background-color:#EAFBF7;margin-bottom:16px;"><img alt="" src="./images/technology.png" style="width:24px;height:24px;display:block;"></div>
+            <h4 style="color:#1C1B33;font-size:16px;font-weight:700;margin:0 0 8px;">Odoo Integration</h4>
+            <p style="color:#605E7E;font-size:14px;line-height:22px;margin:0;">Integrate Odoo seamlessly with third-party apps and systems.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div style="background-color:#ffffff;border:1px solid #E1DEF3;border-radius:14px;padding:26px 22px;height:100%;">
+            <div class="d-flex align-items-center justify-content-center" style="width:44px;height:44px;border-radius:10px;background-color:#EAFBF7;margin-bottom:16px;"><img alt="" src="./images/cloud-server.png" style="width:24px;height:24px;display:block;"></div>
+            <h4 style="color:#1C1B33;font-size:16px;font-weight:700;margin:0 0 8px;">Odoo Hosting &amp; Cloud</h4>
+            <p style="color:#605E7E;font-size:14px;line-height:22px;margin:0;">Secure and scalable Odoo hosting solutions.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div style="background-color:#ffffff;border:1px solid #E1DEF3;border-radius:14px;padding:26px 22px;height:100%;">
+            <div class="d-flex align-items-center justify-content-center" style="width:44px;height:44px;border-radius:10px;background-color:#EAFBF7;margin-bottom:16px;"><img alt="" src="./images/schedule.png" style="width:24px;height:24px;display:block;"></div>
+            <h4 style="color:#1C1B33;font-size:16px;font-weight:700;margin:0 0 8px;">Odoo Maintenance</h4>
+            <p style="color:#605E7E;font-size:14px;line-height:22px;margin:0;">Ensure smooth and uninterrupted operations.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div style="background-color:#ffffff;border:1px solid #E1DEF3;border-radius:14px;padding:26px 22px;height:100%;">
+            <div class="d-flex align-items-center justify-content-center" style="width:44px;height:44px;border-radius:10px;background-color:#EAFBF7;margin-bottom:16px;"><img alt="" src="./images/consultant.png" style="width:24px;height:24px;display:block;"></div>
+            <h4 style="color:#1C1B33;font-size:16px;font-weight:700;margin:0 0 8px;">Odoo Consulting</h4>
+            <p style="color:#605E7E;font-size:14px;line-height:22px;margin:0;">Expert consulting to help you leverage Odoo for maximum efficiency.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Support ============ -->
+  <section id="support" style="padding:0 24px 64px;">
+    <div style="background-color:#232152;color:#ffffff;border-radius:20px;padding:50px 30px;max-width:1132px;margin:0 auto;">
+      <div class="container" style="max-width:1120px;">
+        <div class="text-center" style="max-width:760px;margin:0 auto 40px;">
+          <p style="font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#FF6F59;margin-bottom:12px;">We've got you</p>
+          <h2 style="font-size:28px;font-weight:700;margin:0;color:#ffffff;">Support &amp; Demo</h2>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-3 col-sm-6">
+            <div style="background-color:#3B3880;border:1px solid #3B3880;border-radius:14px;padding:22px 18px;height:100%;">
+              <div style="font-size:20px;margin-bottom:14px;">&#128737;</div>
+              <span style="font-size:14px;line-height:22px;color:#ffffff;">90 days of free support included with every purchase</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div style="background-color:#3B3880;border:1px solid #3B3880;border-radius:14px;padding:22px 18px;height:100%;">
+              <div style="font-size:20px;margin-bottom:14px;">&#127903;</div>
+              <span style="font-size:14px;line-height:22px;color:#ffffff;">Create a support ticket at <a href="https://people.infintor.com/contactus" style="color:#ffffff;text-decoration:underline;">people.infintor.com/contactus</a></span>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div style="background-color:#3B3880;border:1px solid #3B3880;border-radius:14px;padding:22px 18px;height:100%;">
+              <div style="font-size:20px;margin-bottom:14px;">&#9993;</div>
+              <span style="font-size:14px;line-height:22px;color:#ffffff;">Send an email to <a href="mailto:odoo@infintor.com" style="color:#ffffff;text-decoration:underline;">odoo@infintor.com</a></span>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div style="background-color:#3B3880;border:1px solid #3B3880;border-radius:14px;padding:22px 18px;height:100%;">
+              <div style="font-size:20px;margin-bottom:14px;">&#127760;</div>
+              <span style="font-size:14px;line-height:22px;color:#ffffff;">Visit <a href="https://www.infintor.com" style="color:#ffffff;text-decoration:underline;">www.infintor.com</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="text-center" style="padding:30px 24px 40px;font-size:13px;color:#605E7E;">Website Auto Translate for Odoo &mdash; by Infintor</div>
+
+</div>
+
+</body>
+</html>

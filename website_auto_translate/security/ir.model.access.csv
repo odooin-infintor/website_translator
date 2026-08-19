@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+website_auto_translate.access_auto_translate_cache,access_auto_translate_cache,website_auto_translate.model_auto_translate_cache,base.group_user,1,1,1,1

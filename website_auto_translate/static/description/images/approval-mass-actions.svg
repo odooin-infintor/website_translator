@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100" height="100">
+  <circle cx="32" cy="32" r="30" fill="#CFE9DB40"/>
+  <rect x="10" y="14" width="22" height="16" rx="2.5" fill="#F5F1E4" stroke="#1B6A50" stroke-width="2" opacity="0.6"/>
+  <rect x="14" y="18" width="22" height="16" rx="2.5" fill="#F5F1E4" stroke="#1B6A50" stroke-width="2.3"/>
+  <line x1="18" y1="23" x2="24" y2="23" stroke="#1B6A50" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="18" y1="27" x2="28" y2="27" stroke="#1B6A50" stroke-width="1.8" stroke-linecap="round"/>
+  <g transform="translate(41,26)">
+    <circle r="10" fill="#F5F1E4" stroke="#C98F2B" stroke-width="2.4"/>
+    <path d="M-4.5 0.5 L-1.5 3.5 L5 -3" fill="none" stroke="#C98F2B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(41,45)">
+    <circle r="8" fill="#F5F1E4" stroke="#B5453B" stroke-width="2.2"/>
+    <line x1="-3.5" y1="-3.5" x2="3.5" y2="3.5" stroke="#B5453B" stroke-width="2.2" stroke-linecap="round"/>
+    <line x1="3.5" y1="-3.5" x2="-3.5" y2="3.5" stroke="#B5453B" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+</svg>
