@@ -25,7 +25,7 @@
 
     # --- Licensing & pricing ---
     'license': 'Other proprietary',
-    'price': 5.00,
+    'price': 10.00,
     'currency': 'USD',
     'images': [
         'static/description/banner.png',
