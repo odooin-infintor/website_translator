@@ -9,10 +9,7 @@ class AutoTranslateCache(models.Model):
     lang = fields.Char(required=True)
     value = fields.Text()
 
-    _sql_constraints = [
-        (
-            "auto_translate_cache_unique_src_lang",
-            "unique(src, lang)",
-            "Translation already exists",
-        )
-    ]
+    _auto_translate_cache_unique_src_lang = models.Constraint(
+        'unique(src, lang)',
+        "Translation already exists",
+    )

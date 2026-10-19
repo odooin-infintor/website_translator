@@ -1,6 +1,6 @@
 {
     "name": "Website Auto Translate",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "summary": "Automatically translate website content using Google Translate API",
     "description": """
     Website Auto Translate
@@ -36,7 +36,7 @@
     ],
 
     "data": [
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "views/settings.xml",
     ],
 
